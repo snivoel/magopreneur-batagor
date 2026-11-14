@@ -4,6 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAGOPRENEUR · Tim Batagor OKK 35 Unpad</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#3F7D3A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MAGOPRENEUR · Tim Batagor">
+<meta property="og:title" content="MAGOPRENEUR: Wujudkan Kampus Hejo!">
+<meta property="og:description" content="Main game Feed The Maggot, tanya Kang Raka, dan kenali proyek pengolahan sisa makanan Kantin FIKOM oleh Tim Batagor, OKK 35 Unpad.">
+<meta property="og:url" content="https://magopreneur-batagor.vercel.app/">
+<meta property="og:image" content="https://magopreneur-batagor.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MAGOPRENEUR: Wujudkan Kampus Hejo! Ilustrasi Kantin FIKOM dengan tempat sampah terpilah dan biopond maggot">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MAGOPRENEUR: Wujudkan Kampus Hejo!">
+<meta name="twitter:description" content="Main game Feed The Maggot, tanya Kang Raka, dan kenali proyek pengolahan sisa makanan Kantin FIKOM oleh Tim Batagor, OKK 35 Unpad.">
+<meta name="twitter:image" content="https://magopreneur-batagor.vercel.app/og-image.png">
+
 <meta name="description" content="MAGOPRENEUR (Maggot Eco-Preneurship): proyek aksi sosial Kampus Hejo Tim Batagor, Kelompok OKK 35 Universitas Padjadjaran. Biokonversi sisa makanan Kantin FIKOM dengan maggot BSF.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -104,6 +122,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,241,227,.9);backdrop
 #lightbox{position:fixed;inset:0;background:rgba(15,25,30,.85);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
 #lightbox.on{display:flex}
 #lightbox img{max-height:92vh;width:auto;border-radius:12px}
+/* dokumentasi */
+.doks{columns:3 260px;column-gap:16px;margin-top:28px}
+.dok{break-inside:avoid;margin:0 0 16px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 4px 0 #e6dcc4;cursor:zoom-in;transition:transform .15s}
+.dok:hover{transform:translateY(-3px)}
+.dok img{border-radius:12px;width:100%}
+.dok figcaption{font-size:13.5px;font-weight:600;color:#3c4a52;padding:8px 4px 2px;line-height:1.4}
+.dok-empty{margin-top:24px;background:#fff;border:2px dashed #d8ccb0;border-radius:20px;padding:34px 20px;text-align:center;color:var(--muted);font-weight:600}
+#lightbox figcaption{color:#fff;text-align:center;margin-top:10px;font-weight:600}
+#lightbox figure{display:flex;flex-direction:column;align-items:center}
 /* game */
 .game{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .game::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(42,157,143,.35),transparent 70%);right:-200px;top:-200px}
@@ -170,7 +197,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap nav">
     <a class="brand" href="#beranda"><span class="lg"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 19c0-8 6-13 14-14-1 8-6 14-14 14z" fill="#a7c796" stroke="#fff" stroke-width="1.6"/><path d="M5 19c3-4 6-7 10-10" stroke="#fff" stroke-width="1.6" fill="none"/></svg></span><span>Tim Batagor<small>OKK 35 · Unpad</small></span></a>
     <nav class="links" id="links">
-      <a href="#latar">Latar Belakang</a><a href="#tahapan">Tahapan</a><a href="#game">Game</a><a href="#kang-raka">Kang Raka</a><a href="#tim">Tim</a>
+      <a href="#latar">Latar Belakang</a><a href="#tahapan">Tahapan</a><a href="#dokumentasi">Dokumentasi</a><a href="#game">Game</a><a href="#kang-raka">Kang Raka</a><a href="#tim">Tim</a>
     </nav>
     <a class="btn gold" href="#game">Main Sekarang</a>
     <button id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="#21313a" stroke-width="2.2" stroke-linecap="round"/></svg></button>
@@ -186,7 +213,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <p class="tag">Feed The Maggot · Healthy Maggot Healthy Life</p>
       <p style="margin-top:12px">Sisa makanan Kantin FIKOM kami olah bersama maggot Black Soldier Fly menjadi pakan ternak tinggi protein dan pupuk organik. Sampah berkurang, lingkungan lebih bersih, dan ada nilai ekonominya.</p>
       <div class="ctas">
-        <a class="btn gold" href="#game">▶ Main Feed The Maggot</a>
+        <a class="btn gold" href="#game"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg>Main Feed The Maggot</a>
         <button class="btn teal" onclick="KR.open()">Tanya Kang Raka</button>
       </div>
       <div class="meta"><span><b>Maggot Eco-Preneurship</b></span><span>Lokasi: <b>Kantin FIKOM Unpad</b></span><span>Mata kuliah: <b>Olah Kreativitas dan Kewirausahaan</b></span></div>
@@ -308,6 +335,19 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- DOKUMENTASI -->
+<section id="dokumentasi" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Dokumentasi</span>
+      <h2>Jejak kegiatan Tim Batagor</h2>
+      <p class="lead">Momen-momen selama menjalankan MAGOPRENEUR, dari koordinasi dengan pedagang kantin sampai panen maggot. Ketuk foto untuk memperbesar.</p>
+    </div>
+    <div class="doks" id="doks"></div>
+    <div class="dok-empty" id="dokEmpty" hidden>Dokumentasi kegiatan akan segera hadir.</div>
+  </div>
+</section>
+
 <!-- GAME -->
 <section class="game" id="game">
   <div class="wrap">
@@ -376,7 +416,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       </div>
       <div>
         <h4>Jelajahi</h4>
-        <ul><li><a href="#latar">Latar Belakang</a></li><li><a href="#tahapan">Tahapan Kegiatan</a></li><li><a href="#game">Main Game</a></li><li><a href="#kang-raka">Kang Raka</a></li><li><a href="#tim">Meet the Team</a></li></ul>
+        <ul><li><a href="#latar">Latar Belakang</a></li><li><a href="#tahapan">Tahapan Kegiatan</a></li><li><a href="#dokumentasi">Dokumentasi</a></li><li><a href="#game">Main Game</a></li><li><a href="#kang-raka">Kang Raka</a></li><li><a href="#tim">Meet the Team</a></li></ul>
       </div>
       <div>
         <h4>Kontak</h4>
@@ -389,7 +429,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   </div>
 </footer>
 
-<div id="lightbox"><img src="poster.jpg" alt="Poster proyek Feed The Maggot"></div>
+<div id="lightbox"><figure><img id="lbImg" src="poster.jpg" alt="Poster proyek Feed The Maggot"><figcaption id="lbCap"></figcaption></figure></div>
 
 <script src="chatbot.js"></script>
 <script>
@@ -435,7 +475,21 @@ $('#tgrid').innerHTML=TEAM.map(([n,npm,f,p,lead],i)=>{const [c1,c2]=PAL[i];
   const av=`<svg viewBox="0 0 96 96"><defs><linearGradient id="g${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs><rect width="96" height="96" fill="url(#g${i})"/><path d="M-10 80 Q30 ${50+i*3} 106 ${70-i*2} V110 H-10z" fill="rgba(255,255,255,.18)"/><circle cx="${74-i*4}" cy="${20+i*3}" r="10" fill="rgba(255,255,255,.18)"/><text x="48" y="58" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="30" fill="#fff">${ini(n)}</text></svg>`;
   return`<article class="member reveal">${lead?'<span class="lead-b">Ketua</span>':''}<div class="ph">${av}<img src="foto-${slug(n)}.jpg" alt="Foto ${n}" loading="lazy" onerror="this.remove()"></div><h3>${n}</h3><div class="npm">NPM ${npm}</div><dl><dt>Fakultas</dt><dd>${f}</dd><dt>Prodi</dt><dd>${p}</dd></dl></article>`}).join('');
 // poster lightbox
-$('#posterFig').onclick=()=>$('#lightbox').classList.add('on');$('#lightbox').onclick=()=>$('#lightbox').classList.remove('on');
+function openLB(src,cap){$('#lbImg').src=src;$('#lbCap').textContent=cap||'';$('#lightbox').classList.add('on')}
+$('#posterFig').onclick=()=>openLB('poster.jpg','');$('#lightbox').onclick=()=>$('#lightbox').classList.remove('on');
+// dokumentasi: foto bernama dok-1.jpg, dok-2.jpg, ... (atau .png) tampil otomatis; keterangan dari keterangan.txt
+(async function(){
+  const MAX=40,box=$('#doks'),caps={};
+  try{const r=await fetch('keterangan.txt',{cache:'no-store'});if(r.ok)(await r.text()).split(/\r?\n/).forEach(l=>{const i=l.indexOf('|');if(i>0)caps[l.slice(0,i).trim().replace(/\.(jpe?g|png)$/i,'')]=l.slice(i+1).trim()})}catch(e){}
+  let shown=0,done=0;
+  for(let n=1;n<=MAX;n++){const key='dok-'+n,fig=document.createElement('figure');fig.className='dok';fig.hidden=true;box.appendChild(fig);
+    const img=new Image();img.alt=caps[key]||('Dokumentasi '+n);img.decoding='async';let tries=['.jpg','.jpeg','.png'];
+    const next=()=>{const ext=tries.shift();if(!ext){fig.remove();fin();return}img.src=key+ext};
+    img.onload=()=>{fig.hidden=false;fig.appendChild(img);if(caps[key]){const c=document.createElement('figcaption');c.textContent=caps[key];fig.appendChild(c)}
+      fig.onclick=()=>openLB(img.src,caps[key]);shown++;fin()};
+    img.onerror=next;next()}
+  function fin(){if(++done===MAX&&!shown)$('#dokEmpty').hidden=false}
+})();
 // reveal + count-up
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
   e.target.querySelectorAll('[data-count]').forEach(el=>{const to=+el.dataset.count,t0=performance.now();const tick=t=>{const k=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)});
