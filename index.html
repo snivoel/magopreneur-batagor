@@ -70,6 +70,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,241,227,.9);backdrop
 .hero .meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-size:13px;font-weight:700;color:var(--muted)}
 .hero .meta b{color:var(--ink)}
 .hero svg{width:100%;height:auto;filter:drop-shadow(0 20px 30px rgba(40,70,50,.15))}
+.hero .btn svg{width:14px;height:14px;flex-shrink:0;filter:none}
 .flyA{animation:fly 6s ease-in-out infinite}.flyB{animation:fly 7s ease-in-out -2s infinite}
 @keyframes fly{50%{transform:translate(14px,-10px)}}
 @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:28px}}
@@ -122,15 +123,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,241,227,.9);backdrop
 #lightbox{position:fixed;inset:0;background:rgba(15,25,30,.85);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
 #lightbox.on{display:flex}
 #lightbox img{max-height:92vh;width:auto;border-radius:12px}
-/* dokumentasi */
-.doks{columns:3 260px;column-gap:16px;margin-top:28px}
-.dok{break-inside:avoid;margin:0 0 16px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 4px 0 #e6dcc4;cursor:zoom-in;transition:transform .15s}
-.dok:hover{transform:translateY(-3px)}
-.dok img{border-radius:12px;width:100%}
-.dok figcaption{font-size:13.5px;font-weight:600;color:#3c4a52;padding:8px 4px 2px;line-height:1.4}
-.dok-empty{margin-top:24px;background:#fff;border:2px dashed #d8ccb0;border-radius:20px;padding:34px 20px;text-align:center;color:var(--muted);font-weight:600}
-#lightbox figcaption{color:#fff;text-align:center;margin-top:10px;font-weight:600}
-#lightbox figure{display:flex;flex-direction:column;align-items:center}
 /* game */
 .game{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .game::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(42,157,143,.35),transparent 70%);right:-200px;top:-200px}
@@ -197,7 +189,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   <div class="wrap nav">
     <a class="brand" href="#beranda"><span class="lg"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 19c0-8 6-13 14-14-1 8-6 14-14 14z" fill="#a7c796" stroke="#fff" stroke-width="1.6"/><path d="M5 19c3-4 6-7 10-10" stroke="#fff" stroke-width="1.6" fill="none"/></svg></span><span>Tim Batagor<small>OKK 35 · Unpad</small></span></a>
     <nav class="links" id="links">
-      <a href="#latar">Latar Belakang</a><a href="#tahapan">Tahapan</a><a href="#dokumentasi">Dokumentasi</a><a href="#game">Game</a><a href="#kang-raka">Kang Raka</a><a href="#tim">Tim</a>
+      <a href="#latar">Latar Belakang</a><a href="#tahapan">Tahapan</a><a href="#game">Game</a><a href="#kang-raka">Kang Raka</a><a href="#tim">Tim</a>
     </nav>
     <a class="btn gold" href="#game">Main Sekarang</a>
     <button id="menuBtn" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="#21313a" stroke-width="2.2" stroke-linecap="round"/></svg></button>
@@ -335,19 +327,6 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- DOKUMENTASI -->
-<section id="dokumentasi" style="background:var(--cream)">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">Dokumentasi</span>
-      <h2>Jejak kegiatan Tim Batagor</h2>
-      <p class="lead">Momen-momen selama menjalankan MAGOPRENEUR, dari koordinasi dengan pedagang kantin sampai panen maggot. Ketuk foto untuk memperbesar.</p>
-    </div>
-    <div class="doks" id="doks"></div>
-    <div class="dok-empty" id="dokEmpty" hidden>Dokumentasi kegiatan akan segera hadir.</div>
-  </div>
-</section>
-
 <!-- GAME -->
 <section class="game" id="game">
   <div class="wrap">
@@ -416,7 +395,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       </div>
       <div>
         <h4>Jelajahi</h4>
-        <ul><li><a href="#latar">Latar Belakang</a></li><li><a href="#tahapan">Tahapan Kegiatan</a></li><li><a href="#dokumentasi">Dokumentasi</a></li><li><a href="#game">Main Game</a></li><li><a href="#kang-raka">Kang Raka</a></li><li><a href="#tim">Meet the Team</a></li></ul>
+        <ul><li><a href="#latar">Latar Belakang</a></li><li><a href="#tahapan">Tahapan Kegiatan</a></li><li><a href="#game">Main Game</a></li><li><a href="#kang-raka">Kang Raka</a></li><li><a href="#tim">Meet the Team</a></li></ul>
       </div>
       <div>
         <h4>Kontak</h4>
@@ -477,19 +456,6 @@ $('#tgrid').innerHTML=TEAM.map(([n,npm,f,p,lead],i)=>{const [c1,c2]=PAL[i];
 // poster lightbox
 function openLB(src,cap){$('#lbImg').src=src;$('#lbCap').textContent=cap||'';$('#lightbox').classList.add('on')}
 $('#posterFig').onclick=()=>openLB('poster.jpg','');$('#lightbox').onclick=()=>$('#lightbox').classList.remove('on');
-// dokumentasi: foto bernama dok-1.jpg, dok-2.jpg, ... (atau .png) tampil otomatis; keterangan dari keterangan.txt
-(async function(){
-  const MAX=40,box=$('#doks'),caps={};
-  try{const r=await fetch('keterangan.txt',{cache:'no-store'});if(r.ok)(await r.text()).split(/\r?\n/).forEach(l=>{const i=l.indexOf('|');if(i>0)caps[l.slice(0,i).trim().replace(/\.(jpe?g|png)$/i,'')]=l.slice(i+1).trim()})}catch(e){}
-  let shown=0,done=0;
-  for(let n=1;n<=MAX;n++){const key='dok-'+n,fig=document.createElement('figure');fig.className='dok';fig.hidden=true;box.appendChild(fig);
-    const img=new Image();img.alt=caps[key]||('Dokumentasi '+n);img.decoding='async';let tries=['.jpg','.jpeg','.png'];
-    const next=()=>{const ext=tries.shift();if(!ext){fig.remove();fin();return}img.src=key+ext};
-    img.onload=()=>{fig.hidden=false;fig.appendChild(img);if(caps[key]){const c=document.createElement('figcaption');c.textContent=caps[key];fig.appendChild(c)}
-      fig.onclick=()=>openLB(img.src,caps[key]);shown++;fin()};
-    img.onerror=next;next()}
-  function fin(){if(++done===MAX&&!shown)$('#dokEmpty').hidden=false}
-})();
 // reveal + count-up
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
   e.target.querySelectorAll('[data-count]').forEach(el=>{const to=+el.dataset.count,t0=performance.now();const tick=t=>{const k=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)});
